@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title >Select Organization</ion-title>
+    <ion-buttons slot="start" mode="md">
+      <ion-back-button defaultHref="login" ></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchQuery" placeholder="Search Organization"></ion-searchbar>
+
+  <ion-list>
+    <ion-item *ngFor="let org of OrganizationList ">
+      {{org.name}}
+    </ion-item>
+  </ion-list>
+
+  <ion-footer>
+    <ion-button expand="block" (click)="confirmselection()" [disabled]="!selectedOrganization">Confirm</ion-button>
+  </ion-footer>
+  
+</ion-content>
